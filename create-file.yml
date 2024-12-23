@@ -1,0 +1,24 @@
+---
+- name: creating and deleting files
+  hosts: all
+  become: yes
+
+  tasks:
+  - name: creating file
+    file:
+      path: /home/ubuntu/testing.txt
+      state: touch
+      mode: 0777
+  - name: creating folder
+    file:
+      path: /home/ubuntu/test-folder
+      state: directory
+      owner: ubuntu
+  - name: deleting folder
+    file:
+      path: /home/ubuntu/folderr
+      state: absent #used to delete a folder
+  - name: deleting a file
+    file:
+      path: /home/ubuntu/filee.txt
+      state: absent #to delete a file

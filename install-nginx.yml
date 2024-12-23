@@ -1,0 +1,22 @@
+---
+- name: installing nginx
+  hosts: all
+  become: yes
+
+  tasks:
+  - name: checking conectivity
+    ping:
+
+  - name: debugging
+    debug: msg="hello"
+
+  - name: installing nginx
+    apt:
+      name: nginx
+      state: present
+
+  - name: starting nginx
+    service:
+      name: nginx
+      state: started
+      enabled: true

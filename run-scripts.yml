@@ -1,0 +1,12 @@
+---
+- name: Run script
+  hosts: all
+  become: yes
+
+  tasks:
+  - name: giving perms
+    file:
+      path: /home/ubuntu/script.sh
+      mode: 0777
+  - name: running shell file
+    shell: /home/ubuntu/script.sh

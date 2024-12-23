@@ -1,0 +1,13 @@
+---
+- name: copying file to remote server
+  hosts: all
+  become: yes
+
+  tasks:
+  - name: copy file
+    copy:
+      src: /home/ubuntu/playbooks/copy-file.yml
+      dest: /home/ubuntu/systumm/
+      owner: daemon
+      mode: 0777
+      backup: true

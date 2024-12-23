@@ -1,0 +1,10 @@
+---
+- name: deleting cronjobs
+  hosts: all
+
+  tasks:
+  - name: cronjob modification/deletion
+    cron:
+      name: every 15th day of every month
+      state: absent
+      user: ubuntu

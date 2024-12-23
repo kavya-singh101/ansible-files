@@ -1,0 +1,15 @@
+---
+- name: crontabs
+  hosts: all
+
+  tasks:
+  - name: creating crontabs
+    cron:
+      name: every 15th day of every month
+      minute: 30
+      hour: 18
+      day: 15
+      month: "*"
+      weekday: "*"
+      user: ubuntu
+      job: /home/ubuntu/script.sh
